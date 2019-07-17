@@ -1,4 +1,3 @@
-#/usr/bin/env python
 #coding=utf8
  
 import http.client
@@ -37,7 +36,6 @@ for x in l:
 if boo == False:
     toLang ="zh"
 salt = random.randint(32768, 65536)
-
 sign = appid+q+str(salt)+secretKey
 m1 = hashlib.md5(sign.encode())
 sign = m1.hexdigest()
@@ -53,9 +51,6 @@ try:
     src = obc["src"]
     dst = obc["dst"]
     print("%s translate to %s is %s" %(q,toLang,dst) )
-
-
-
 except Exception as e:
     print(e)
 finally:
